@@ -36,6 +36,7 @@ item_number = 200
 river_info = []
 
 number_attribute_remove_lost_arr = {}
+number_attribute_remove_lost_using_freq = {}
 
 def parse_data():
 	fp = open('Analysis.txt')
@@ -259,7 +260,7 @@ def plot_histogram():
 		plt.ylabel('value')
 		plt.grid(True)
 		
-		plt.show()
+		#plt.show()
 		plt.savefig(path + '/' + k + '.png')
 		plt.close()
 
@@ -326,43 +327,88 @@ def plot_as():
 				plt.savefig(path + '/' + na_key_name + '_' + a_index_key + '.png')
 				plt.close()
 
+def plot_com_freq():
 
-def store_new_data(data_info, file_name):
-	data_to_file = ''
+	path = './com_freq'
+	if os.path.exists(path) == False:
+		os.mkdir(path)
 
-	for i in range(0, len(river_info)):
-		data_to_file += '|' + river_info[i][NAME_NOMINAL_ATTRIBUTE][NAME_SEASON]
-		data_to_file += '|' + river_info[i][NAME_NOMINAL_ATTRIBUTE][NAME_SIZE]
-		data_to_file += '|' + river_info[i][NAME_NOMINAL_ATTRIBUTE][NAME_SPEED]
-		
-		data_info_index = 0
-		data_to_file += '|' + data_info[NAME_MXPH][data_info_index]
-		data_to_file += '|' + data_info[NAME_MNO2][data_info_index]
-		data_to_file += '|' + data_info[NAME_CI][data_info_index]
-		data_to_file += '|' + data_info[NAME_NO3][data_info_index]
-		data_to_file += '|' + data_info[NAME_NH4][data_info_index]
-		data_to_file += '|' + data_info[NAME_OPO4][data_info_index]
-		data_to_file += '|' + data_info[NAME_PO4][data_info_index]
-		data_to_file += '|' + data_info[NAME_CHLA][data_info_index]
-		data_info_index += 1
-
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_1]
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_2]
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_3]
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_4]
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_5]
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_6]
-		data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_7]
-
-		data_to_file += '|\r\n'
-		#print(data_to_file)
-	file = open(file_name, 'w')
-	file.write(data_to_file)
-	file.close()
-		
+	global number_attribute_remove_lost_arr
+	global number_attribute_remove_lost_using_freq
+	for k, v in number_attribute_remove_lost_using_freq.iteritems():
+		plt.hist(v, 100, facecolor = 'r', alpha = 0.75, label = 'new')
+		plt.hist(number_attribute_remove_lost_arr[k], 100, facecolor = 'g', alpha = 0.75, label = 'original')
+		plt.xlabel(k)
+		plt.ylabel('value')
+		plt.grid(True)
+		plt.legend()
+		#plt.show()
+		plt.savefig(path + '/' + k + '.png')
+		plt.close()
 
 
 def fillin_lost_by_freq():
+
+	def store_new_data(data_info, file_name):
+        #print('data_info', data_info)
+		data_to_file = ''
+
+		tmp_mxph = []
+		tmp_mno2 = []
+		tmp_ci = []
+		tmp_no3 = []
+		tmp_nh4 = []
+		tmp_opo4 = []
+		tmp_po4 = []
+		tmp_chla = []
+		data_info_index = 0
+		for i in range(0, len(river_info)):
+			data_to_file += '|' + river_info[i][NAME_NOMINAL_ATTRIBUTE][NAME_SEASON]
+			data_to_file += '|' + river_info[i][NAME_NOMINAL_ATTRIBUTE][NAME_SIZE]
+			data_to_file += '|' + river_info[i][NAME_NOMINAL_ATTRIBUTE][NAME_SPEED]
+			
+			data_to_file += '|' + data_info[NAME_MXPH][data_info_index]
+			data_to_file += '|' + data_info[NAME_MNO2][data_info_index]
+			data_to_file += '|' + data_info[NAME_CI][data_info_index]
+			data_to_file += '|' + data_info[NAME_NO3][data_info_index]
+			data_to_file += '|' + data_info[NAME_NH4][data_info_index]
+			data_to_file += '|' + data_info[NAME_OPO4][data_info_index]
+			data_to_file += '|' + data_info[NAME_PO4][data_info_index]
+			data_to_file += '|' + data_info[NAME_CHLA][data_info_index]
+
+			tmp_mxph.append(float(data_info[NAME_MXPH][data_info_index]))
+			tmp_mno2.append(float(data_info[NAME_MNO2][data_info_index]))
+			tmp_ci.append(float(data_info[NAME_CI][data_info_index]))
+			tmp_no3.append(float(data_info[NAME_NO3][data_info_index]))
+			tmp_nh4.append(float(data_info[NAME_NH4][data_info_index]))
+			tmp_opo4.append(float(data_info[NAME_OPO4][data_info_index]))
+			tmp_po4.append(float(data_info[NAME_PO4][data_info_index]))
+			tmp_chla.append(float(data_info[NAME_CHLA][data_info_index]))
+			data_info_index += 1
+
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_1]
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_2]
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_3]
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_4]
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_5]
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_6]
+			data_to_file += '|' + river_info[i][NAME_ALGAE][NAME_A_7]
+
+			data_to_file += '|\r\n'
+			#print(data_to_file)
+		file = open(file_name, 'w')
+		file.write(data_to_file)
+		file.close()
+		
+		number_attribute_remove_lost_using_freq[NAME_MXPH] = tmp_mxph
+		number_attribute_remove_lost_using_freq[NAME_MNO2] = tmp_mno2
+		number_attribute_remove_lost_using_freq[NAME_CI] = tmp_ci
+		number_attribute_remove_lost_using_freq[NAME_NO3] = tmp_no3
+		number_attribute_remove_lost_using_freq[NAME_NH4] = tmp_nh4
+		number_attribute_remove_lost_using_freq[NAME_OPO4] = tmp_opo4
+		number_attribute_remove_lost_using_freq[NAME_PO4] = tmp_po4
+		number_attribute_remove_lost_using_freq[NAME_CHLA] = tmp_chla
+		#print('number_attribute_remove_lost_using_freq', number_attribute_remove_lost_using_freq)
 	data_info = {}
 	re_value = re.compile(r'^[-+]?[0-9]+\.[0-9]+$')
 	for i in range(0, len(river_info)):
@@ -435,6 +481,7 @@ if __name__ == '__main__':
 	plot_as()
 	remove_record_containing_lost()
 	fillin_lost_by_freq()
+	plot_com_freq()
 	
 
 	
