@@ -1,0 +1,89 @@
+('rules', 45)
+('rules_remove_redundancy', 33)
+
+
+
+yl@yl-HP-Compaq-Pro-6380-MT:~/develop/DataMining_homework_2/UCI$ python main.py 
+('L:', [[frozenset(['symptom_6']), frozenset(['symptom_7']), frozenset(['symptom_4']), frozenset(['symptom_3']), frozenset(['symptom_5']), frozenset(['fever']), frozenset(['symptom_2'])], [frozenset(['symptom_6', 'fever']), frozenset(['symptom_7', 'symptom_2']), frozenset(['symptom_4', 'symptom_6']), frozenset(['symptom_4', 'symptom_3']), frozenset(['symptom_7', 'fever']), frozenset(['symptom_4', 'fever']), frozenset(['fever', 'symptom_3']), frozenset(['symptom_6', 'symptom_3']), frozenset(['fever', 'symptom_2']), frozenset(['symptom_5', 'symptom_3'])], [frozenset(['symptom_4', 'fever', 'symptom_3']), frozenset(['symptom_6', 'symptom_3', 'fever']), frozenset(['symptom_4', 'symptom_6', 'symptom_3']), frozenset(['symptom_7', 'fever', 'symptom_2']), frozenset(['symptom_4', 'symptom_6', 'fever'])], [frozenset(['symptom_4', 'symptom_6', 'symptom_3', 'fever'])], []])
+
+
+frozenset(['fever']) --> frozenset(['symptom_6']) support: 0.384615384615 conf: 0.555555555556 lift: 0.902777777778
+frozenset(['symptom_6']) --> frozenset(['fever']) support: 0.384615384615 conf: 0.625 lift: 0.902777777778
+frozenset(['symptom_2']) --> frozenset(['symptom_7']) support: 0.307692307692 conf: 0.666666666667 lift: 2.16666666667
+frozenset(['symptom_7']) --> frozenset(['symptom_2']) support: 0.307692307692 conf: 1.0 lift: 2.16666666667
+frozenset(['symptom_6']) --> frozenset(['symptom_4']) support: 0.461538461538 conf: 0.75 lift: 1.39285714286
+frozenset(['symptom_4']) --> frozenset(['symptom_6']) support: 0.461538461538 conf: 0.857142857143 lift: 1.39285714286
+frozenset(['symptom_3']) --> frozenset(['symptom_4']) support: 0.461538461538 conf: 0.666666666667 lift: 1.2380952381
+frozenset(['symptom_4']) --> frozenset(['symptom_3']) support: 0.461538461538 conf: 0.857142857143 lift: 1.2380952381
+frozenset(['fever']) --> frozenset(['symptom_7']) support: 0.307692307692 conf: 0.444444444444 lift: 1.44444444444
+frozenset(['symptom_7']) --> frozenset(['fever']) support: 0.307692307692 conf: 1.0 lift: 1.44444444444
+frozenset(['fever']) --> frozenset(['symptom_4']) support: 0.384615384615 conf: 0.555555555556 lift: 1.03174603175
+frozenset(['symptom_4']) --> frozenset(['fever']) support: 0.384615384615 conf: 0.714285714286 lift: 1.03174603175
+frozenset(['symptom_3']) --> frozenset(['fever']) support: 0.461538461538 conf: 0.666666666667 lift: 0.962962962963
+frozenset(['fever']) --> frozenset(['symptom_3']) support: 0.461538461538 conf: 0.666666666667 lift: 0.962962962963
+frozenset(['symptom_3']) --> frozenset(['symptom_6']) support: 0.615384615385 conf: 0.888888888889 lift: 1.44444444444
+frozenset(['symptom_6']) --> frozenset(['symptom_3']) support: 0.615384615385 conf: 1.0 lift: 1.44444444444
+frozenset(['symptom_2']) --> frozenset(['fever']) support: 0.384615384615 conf: 0.833333333333 lift: 1.2037037037
+frozenset(['fever']) --> frozenset(['symptom_2']) support: 0.384615384615 conf: 0.555555555556 lift: 1.2037037037
+frozenset(['symptom_3']) --> frozenset(['symptom_5']) support: 0.307692307692 conf: 0.444444444444 lift: 1.44444444444
+frozenset(['symptom_5']) --> frozenset(['symptom_3']) support: 0.307692307692 conf: 1.0 lift: 1.44444444444
+frozenset(['symptom_3']) --> frozenset(['symptom_4', 'fever']) support: 0.307692307692 conf: 0.444444444444 lift: 1.15555555556
+frozenset(['fever']) --> frozenset(['symptom_4', 'symptom_3']) support: 0.307692307692 conf: 0.444444444444 lift: 0.962962962963
+frozenset(['symptom_4']) --> frozenset(['fever', 'symptom_3']) support: 0.307692307692 conf: 0.571428571429 lift: 1.2380952381
+frozenset(['fever']) --> frozenset(['symptom_6', 'symptom_3']) support: 0.384615384615 conf: 0.555555555556 lift: 0.902777777778
+frozenset(['symptom_3']) --> frozenset(['symptom_6', 'fever']) support: 0.384615384615 conf: 0.555555555556 lift: 1.44444444444
+frozenset(['symptom_6']) --> frozenset(['fever', 'symptom_3']) support: 0.384615384615 conf: 0.625 lift: 1.35416666667
+frozenset(['symptom_3']) --> frozenset(['symptom_4', 'symptom_6']) support: 0.461538461538 conf: 0.666666666667 lift: 1.44444444444
+frozenset(['symptom_6']) --> frozenset(['symptom_4', 'symptom_3']) support: 0.461538461538 conf: 0.75 lift: 1.625
+frozenset(['symptom_4']) --> frozenset(['symptom_6', 'symptom_3']) support: 0.461538461538 conf: 0.857142857143 lift: 1.39285714286
+frozenset(['symptom_2']) --> frozenset(['symptom_7', 'fever']) support: 0.307692307692 conf: 0.666666666667 lift: 2.16666666667
+frozenset(['fever']) --> frozenset(['symptom_7', 'symptom_2']) support: 0.307692307692 conf: 0.444444444444 lift: 1.44444444444
+frozenset(['symptom_7']) --> frozenset(['fever', 'symptom_2']) support: 0.307692307692 conf: 1.0 lift: 2.6
+frozenset(['fever']) --> frozenset(['symptom_4', 'symptom_6']) support: 0.307692307692 conf: 0.444444444444 lift: 0.962962962963
+frozenset(['symptom_6']) --> frozenset(['symptom_4', 'fever']) support: 0.307692307692 conf: 0.5 lift: 1.3
+frozenset(['symptom_4']) --> frozenset(['symptom_6', 'fever']) support: 0.307692307692 conf: 0.571428571429 lift: 1.48571428571
+frozenset(['fever', 'symptom_3']) --> frozenset(['symptom_4', 'symptom_6']) support: 0.307692307692 conf: 0.666666666667 lift: 1.44444444444
+frozenset(['symptom_6', 'fever']) --> frozenset(['symptom_4', 'symptom_3']) support: 0.307692307692 conf: 0.8 lift: 1.73333333333
+frozenset(['symptom_6', 'symptom_3']) --> frozenset(['symptom_4', 'fever']) support: 0.307692307692 conf: 0.5 lift: 1.3
+frozenset(['symptom_4', 'fever']) --> frozenset(['symptom_6', 'symptom_3']) support: 0.307692307692 conf: 0.8 lift: 1.3
+frozenset(['symptom_4', 'symptom_3']) --> frozenset(['symptom_6', 'fever']) support: 0.307692307692 conf: 0.666666666667 lift: 1.73333333333
+frozenset(['symptom_4', 'symptom_6']) --> frozenset(['fever', 'symptom_3']) support: 0.307692307692 conf: 0.666666666667 lift: 1.44444444444
+frozenset(['fever']) --> frozenset(['symptom_4', 'symptom_6', 'symptom_3']) support: 0.307692307692 conf: 0.444444444444 lift: 0.962962962963
+frozenset(['symptom_3']) --> frozenset(['symptom_4', 'symptom_6', 'fever']) support: 0.307692307692 conf: 0.444444444444 lift: 1.44444444444
+frozenset(['symptom_6']) --> frozenset(['symptom_4', 'fever', 'symptom_3']) support: 0.307692307692 conf: 0.5 lift: 1.625
+frozenset(['symptom_4']) --> frozenset(['symptom_6', 'symptom_3', 'fever']) support: 0.307692307692 conf: 0.571428571429 lift: 1.48571428571
+(frozenset(['symptom_2']), frozenset(['symptom_7']), 0.3076923076923077, 0.6666666666666666, 2.1666666666666665)
+(frozenset(['symptom_7']), frozenset(['symptom_2']), 0.3076923076923077, 1.0, 2.1666666666666665)
+(frozenset(['fever']), frozenset(['symptom_7']), 0.3076923076923077, 0.4444444444444445, 1.4444444444444444)
+(frozenset(['symptom_7']), frozenset(['fever']), 0.3076923076923077, 1.0, 1.4444444444444444)
+(frozenset(['symptom_2']), frozenset(['fever']), 0.38461538461538464, 0.8333333333333334, 1.2037037037037037)
+(frozenset(['fever']), frozenset(['symptom_2']), 0.38461538461538464, 0.5555555555555556, 1.2037037037037037)
+(frozenset(['symptom_3']), frozenset(['symptom_5']), 0.3076923076923077, 0.4444444444444445, 1.4444444444444444)
+(frozenset(['symptom_5']), frozenset(['symptom_3']), 0.3076923076923077, 1.0, 1.4444444444444444)
+(frozenset(['symptom_3']), frozenset(['symptom_4', 'fever']), 0.3076923076923077, 0.4444444444444445, 1.1555555555555554)
+(frozenset(['fever']), frozenset(['symptom_4', 'symptom_3']), 0.3076923076923077, 0.4444444444444445, 0.9629629629629629)
+(frozenset(['symptom_4']), frozenset(['fever', 'symptom_3']), 0.3076923076923077, 0.5714285714285715, 1.2380952380952381)
+(frozenset(['fever']), frozenset(['symptom_6', 'symptom_3']), 0.38461538461538464, 0.5555555555555556, 0.9027777777777778)
+(frozenset(['symptom_3']), frozenset(['symptom_6', 'fever']), 0.38461538461538464, 0.5555555555555556, 1.4444444444444444)
+(frozenset(['symptom_6']), frozenset(['fever', 'symptom_3']), 0.38461538461538464, 0.625, 1.3541666666666667)
+(frozenset(['symptom_3']), frozenset(['symptom_4', 'symptom_6']), 0.46153846153846156, 0.6666666666666667, 1.4444444444444444)
+(frozenset(['symptom_6']), frozenset(['symptom_4', 'symptom_3']), 0.46153846153846156, 0.75, 1.625)
+(frozenset(['symptom_4']), frozenset(['symptom_6', 'symptom_3']), 0.46153846153846156, 0.8571428571428572, 1.3928571428571428)
+(frozenset(['symptom_2']), frozenset(['symptom_7', 'fever']), 0.3076923076923077, 0.6666666666666666, 2.1666666666666665)
+(frozenset(['fever']), frozenset(['symptom_7', 'symptom_2']), 0.3076923076923077, 0.4444444444444445, 1.4444444444444444)
+(frozenset(['symptom_7']), frozenset(['fever', 'symptom_2']), 0.3076923076923077, 1.0, 2.6)
+(frozenset(['fever']), frozenset(['symptom_4', 'symptom_6']), 0.3076923076923077, 0.4444444444444445, 0.9629629629629629)
+(frozenset(['symptom_6']), frozenset(['symptom_4', 'fever']), 0.3076923076923077, 0.5, 1.3)
+(frozenset(['symptom_4']), frozenset(['symptom_6', 'fever']), 0.3076923076923077, 0.5714285714285715, 1.4857142857142858)
+(frozenset(['fever', 'symptom_3']), frozenset(['symptom_4', 'symptom_6']), 0.3076923076923077, 0.6666666666666666, 1.4444444444444442)
+(frozenset(['symptom_6', 'fever']), frozenset(['symptom_4', 'symptom_3']), 0.3076923076923077, 0.8, 1.7333333333333332)
+(frozenset(['symptom_6', 'symptom_3']), frozenset(['symptom_4', 'fever']), 0.3076923076923077, 0.5, 1.3)
+(frozenset(['symptom_4', 'fever']), frozenset(['symptom_6', 'symptom_3']), 0.3076923076923077, 0.8, 1.3)
+(frozenset(['symptom_4', 'symptom_3']), frozenset(['symptom_6', 'fever']), 0.3076923076923077, 0.6666666666666666, 1.7333333333333332)
+(frozenset(['symptom_4', 'symptom_6']), frozenset(['fever', 'symptom_3']), 0.3076923076923077, 0.6666666666666666, 1.4444444444444442)
+(frozenset(['fever']), frozenset(['symptom_4', 'symptom_6', 'symptom_3']), 0.3076923076923077, 0.4444444444444445, 0.9629629629629629)
+(frozenset(['symptom_3']), frozenset(['symptom_4', 'symptom_6', 'fever']), 0.3076923076923077, 0.4444444444444445, 1.4444444444444444)
+(frozenset(['symptom_6']), frozenset(['symptom_4', 'fever', 'symptom_3']), 0.3076923076923077, 0.5, 1.625)
+(frozenset(['symptom_4']), frozenset(['symptom_6', 'symptom_3', 'fever']), 0.3076923076923077, 0.5714285714285715, 1.4857142857142858)
+yl@yl-HP-Compaq-Pro-6380-MT:~/develop/DataMining_homework_2/UCI$ 
+
